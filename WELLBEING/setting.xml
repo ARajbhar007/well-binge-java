@@ -1,0 +1,65 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <!-- The local repository contains your project dependencies and build artifacts. -->
+    <!-- It's typically located at ${user.home}/.m2/repository -->
+    <!-- To change the default location, uncomment and provide a new path. -->
+    <!-- <localRepository>/path/to/my/local/repo</localRepository> -->
+
+    <profiles>
+        <!-- A profile can be used to set environment-specific configurations. -->
+        <profile>
+            <id>development</id>
+            <repositories>
+                <repository>
+                    <id>nexus</id>
+                    <name>Nexus Repository</name>
+                    <url>http://localhost:8081/repository/maven-public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <!-- Uncomment to activate a specific profile by default. -->
+        <!-- <activeProfile>development</activeProfile> -->
+    </activeProfiles>
+
+    <mirrors>
+        <!-- Mirrors are used to redirect requests for a repository to a different one. -->
+        <!-- This is common for setting up a central repository proxy like Nexus. -->
+        <!--
+        <mirror>
+            <id>nexus-mirror</id>
+            <name>Nexus Mirror</name>
+            <url>http://localhost:8081/repository/maven-public/</url>
+            <mirrorOf>central</mirrorOf>
+        </mirror>
+        -->
+    </mirrors>
+
+    <servers>
+        <!-- Servers are used to store authentication information (usernames/passwords)
+             for private repositories like Nexus or for deployment. -->
+        <server>
+            <id>nexus</id>
+            <username>admin</username>
+            <password>{admin_password}</password>
+        </server>
+        <!--
+        <server>
+            <id>deployment-server</id>
+            <username>deploy-user</username>
+            <password>deploy-password</password>
+        </server>
+        -->
+    </servers>
+
+</settings>

@@ -6,17 +6,17 @@ pipeline {
     environment {
         NEXUS_URL = 'http://nexus:8081'
         NEXUS_REPOSITORY = 'maven-snapshots'
-        ARTIFACT_GROUP = 'com.example.laundry'
-        ARTIFACT_ID = 'LaundryApp'
+        ARTIFACT_GROUP = 'com.example.app'
+        ARTIFACT_ID = 'phone-reminder'
         ARTIFACT_VERSION = '1.0-SNAPSHOT'
-        ARTIFACT_FILE = 'maven-app/target/LaundryApp-1.0-SNAPSHOT.jar'
+        ARTIFACT_FILE = 'maven-app/target/phone-reminder-1.0-SNAPSHOT.jar'
         NEXUS_CREDENTIALS = 'nexus'
     }
 
     stages {
         stage('stage1 Clone Code') {
             steps {
-                git branch: 'main', credentialsId: 'GIT-TOKEN-READONLY', url: 'https://github.com/devopsdecode/april-2025.git'
+                git branch: 'master', credentialsId: 'GIT-TOKEN-READONLY', url: 'https://github.com/ARajbhar007/well-binge-java.git'
             }
         }
 

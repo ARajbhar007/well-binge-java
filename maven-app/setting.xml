@@ -50,8 +50,8 @@
              for private repositories like Nexus or for deployment. -->
         <server>
             <id>nexus</id>
-            <username>admin</username>
-            <password>{admin_password}</password>
+            <username>${env.NEXUS_USER}</username>
+            <password>${env.NEXUS_PASS}</password>
         </server>
         <!--
         <server>

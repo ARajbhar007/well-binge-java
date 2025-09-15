@@ -37,7 +37,7 @@ pipeline {
                             mvn deploy:deploy-file \
                                 -Durl=${NEXUS_URL}/repository/${NEXUS_REPOSITORY}/ \
                                 -DrepositoryId=nexus \
-                                -Dfile=target/LaundryApp-1.0-SNAPSHOT.jar \
+                                -Dfile=target/phone-reminder-1.0-SNAPSHOT.jar \
                                 -DgroupId=${ARTIFACT_GROUP} \
                                 -DartifactId=${ARTIFACT_ID} \
                                 -Dversion=${ARTIFACT_VERSION} \
